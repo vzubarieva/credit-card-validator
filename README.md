@@ -12,7 +12,7 @@
     OutCome: Credit Card number INVALID: sum does not equal to a number ending in 0.
 
 Test: take input, split string into individual numbers
-Code: .parseInt(inputtedCardNumber).toString();
+Code: .parseInt(inputtedCardNumber);
 Expected output: 4765980755324913 -> 4 7 6 5 9 8 0 7 5 5 3 2 4 9 1 3
 
 Test: reverse inputtedCardNumber from right to left 
