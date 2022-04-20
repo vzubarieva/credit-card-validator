@@ -1,23 +1,35 @@
 // Business logic
 
-let inputtedCard = [];
-// let numberArray= text.parseInt();
-let newCardNumber = [];
-let everyOtherDoubled = [];
 
 function cardValidator(number) {
-  return (number + '').split('').map((i) => { return Number(i); })
+  // first test
+  const numbers = (number + '').split('').map((i) => Number(i));
+
+  // second test
+  const reversedNumbers = numbers.reverse();
+
+  // third test
+  const everyOtherDoubled = reversedNumbers.map((n, i) => {
+    if (i === 0 || i % 2 === 0) {
+      return n * 2;
+    } else {
+      return n
+    }
+  });
+
+  // fourth test
+  const everyOtherDoubledDigits = everyOtherDoubled.map((n, i) => {
+    if (n > 9) {
+      return 1 + Number((n + '')[1]);
+    } else {
+      return n
+    }
+  });
+
+  let everyOtherDoubledDigitsSum = 0;
+  everyOtherDoubledDigits.forEach((n) => {
+    everyOtherDoubledDigitsSum = everyOtherDoubledDigitsSum + n;
+  })
+
+  return everyOtherDoubledDigitsSum % 10 === 0 ? 'valid' : 'invalid';
 }
-inputtedCard.forEach(function (number) {
-  numberArray.push().reverse(number);
-});
-inputtedCard.forEach(function (element) {
-  for (let i = 0; i <= inputtedCard.lenth; i += 2) {
-    everyOtherDoubled.push(element[i] * 2);
-  }
-});
-everyOtherDoubled.forEach(function (element) {
-  if (number < 9) {
-    everyOtherDoubled.slice(number)
-  }
-});
