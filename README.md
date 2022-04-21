@@ -36,3 +36,13 @@ Test: inputted sum to end in an 0
 Code: cardValidator("4765980755324913");
   <!-- if remainder of inputtedSum doesNOT equal to 0, card is invalid -->
 Expected Output: "Card is not valid"
+
+Description: Validate the First Digits of the Credit Card Number
+Test: take input, split string into individual numbers
+Code:
+Expected Output:3765980755324913 -> 3 7 6 5 9 8 0 7 5 5 3 2 4 9 1 3
+
+Test: first digits 2 numbers (American Express cards always begin with the numbers 34 or 37)
+Code: if 
+Expected Output: 3 7 6 5 9 8 0 7 5 5 3 2 4 9 1 3 -> valid American Express card
+

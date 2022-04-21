@@ -33,3 +33,22 @@ function cardValidator(number) {
 
   return everyOtherDoubledDigitsSum % 10 === 0 ? 'valid' : 'invalid';
 }
+
+function firstDigitOfTheCard(number) {
+  //first test
+  let numbers = (number + '').split('').map((i) => Number(i));
+  // second test
+  for (let index = 0; index <= 1; index += 1) {
+    if (numbers[0] === 3 && numbers[1] === 4 || numbers[0] === 3 && numbers[1] === 7) {
+      return 'American Express';
+    } else if (numbers[0] === 4) {
+      return "Visa";
+    } else if (numbers[0] === 5) {
+      return "Master Card";
+    } else if (numbers[0] === 6) {
+      return 'Discover Cards';
+    } else {
+      return "Card not valid"
+    }
+  }
+}
